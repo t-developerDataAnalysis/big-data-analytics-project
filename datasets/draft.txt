@@ -1,0 +1,97 @@
+LOAD  DATA  INFILE 'WPP2022_GEN_F01_DEMOGRAPHIC_INDICATORS_REV1_2.csv' INTO TABLE cind820.import_united_nations FIELDS TERMINATED BY ','IGNORE 1 ROWS;
+ 
+on /var/lib/mysql/cind820
+ 
+create table import_united_nations_countries
+as
+SELECT * FROM cind820.import_united_nations
+where iso3_alpha_code <> '';
+----
+My sql call for the stored procedure that cleans the empty white spaces on the fields
+
+CALL cleaning_white_blanks_fields('TEST');
+
+
+------------
+pandas gui 
+#from pandasgui import show
+
+show data in PandasGUI
+
+show(df)
+
+
+
+# k-best with regression
+import pandas as pd
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
+from sklearn.feature_selection import SelectKBest, f_regression
+
+# Assuming you have your dataset stored in a pandas DataFrame called 'df'
+
+
+# Identify the numerical columns in your dataframe
+#numerical_columns = df.select_dtypes(include=[np.number]).columns
+numerical_columns= ['Time', 'TPopulation1July', 'TPopulationMale1July',
+       'TPopulationFemale1July', 'PopDensity', 'PopSexRatio', 'MedianAgePop',
+       'NatChange', 'NatChangeRT', 'PopChange', 'PopGrowthRate',
+       'DoublingTime', 'Births', 'Births1519', 'CBR', 'TFR', 'NRR', 'MAC',
+       'SRB', 'Deaths', 'DeathsMale', 'DeathsFemale', 'CDR', 'LEx', 'LExMale',
+       'LExFemale', 'LE15', 'LE15Male', 'LE15Female', 'LE65', 'LE65Male',
+       'LE65Female', 'LE80', 'LE80Male', 'LE80Female', 'InfantDeaths', 'IMR',
+       'LBsurvivingAge1', 'Under5Deaths', 'Q5', 'Q0040', 'Q0040Male',
+       'Q0040Female', 'Q0060', 'Q0060Male', 'Q0060Female', 'Q1550',
+       'Q1550Male', 'Q1550Female', 'Q1560', 'Q1560Male', 'Q1560Female',
+       'NetMigrations', 'CNMR']
+
+# Extract the numerical columns from the dataframe
+numerical_data = df[numerical_columns]
+numerical_data.fillna(0, inplace=True)
+
+# Standardize the features by subtracting the mean and scaling to unit variance
+scaler = StandardScaler()
+data_scaled = scaler.fit_transform(numerical_data)
+
+# Create a PCA object
+pca = PCA()
+
+# Apply PCA to the standardized data
+pca_result = pca.fit_transform(data_scaled)
+
+# Get the principal component loadings
+loadings = pca.components_
+
+# Create a DataFrame to display the loadings
+loadings_df = pd.DataFrame(loadings, columns=numerical_columns)
+
+# Specify the number of top features to select
+k = 5
+
+target_variable =['TPopulation1Jan']
+
+# Perform feature selection using SelectKBest with f_regression
+selector = SelectKBest(score_func=f_regression, k=k)
+selected_features = selector.fit_transform(numerical_data,target_variable )
+
+# Get the indices of the selected features
+selected_indices = selector.get_support(indices=True)
+
+# Get the names of the selected features
+selected_features_names = numerical_data.columns[selected_indices]
+
+# Print the names of the selected features
+print("Selected Features:")
+print(selected_features_names)
+
+
+## PANDAS PROFILING - this library was not able to manage Big Data 
+# Optimizing the dataframe
+# pd.concat is used to join all the columns of the DataFrame, the result makes the pandas profiling works better
+# with a large amount of information 
+df_optimized = pd.concat([df_sample[column] for column in df_sample.columns], axis=1)
+
+# Generate the profile report
+#profile = ProfileReport(df_optimized)
+
+#profile.to_file("population.html")    #

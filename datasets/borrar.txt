@@ -1,0 +1,140 @@
+
+import pandas as pd
+
+# Array to initialize the code
+rangeOfAge = ['00_04_male','00_04_female','05_09_male','05_09_female','10_14_male','10_14_female','15_19_male',
+'15_19_female','20_24_male','20_24_female','25_29_male','25_29_female','30_34_male','30_34_female',
+'35_39_male','35_39_female','40_44_male','40_44_female','45_49_male','45_49_female','50_54_male',
+'50_54_female','55_59_male','55_59_female','60_64_male','60_64_female','65_69_male','65_69_female',
+'70_74_male','70_74_female','75_79_male','75_79_female','80_84_male','80_84_female','85_89_male',
+'85_89_female','90_94_male','90_94_female','95_99_male','95_99_female','100_male','100_female']
+
+
+
+# Loop over the dataframe rows and access columns
+for index, row in df_copy.iterrows():
+     
+    matching_index = df[(df['Time'] == row['Time']) & (df['LocID'] == row['LocID'])].index
+    
+    if not matching_index.empty:
+            
+            match row['AgeGrp']:
+                
+                case '0-4':
+                    
+                    df.loc[matching_index, '00_04_male'] = row['PopMale']
+                    df.loc[matching_index, '00_04_female'] = row['PopFemale']  
+                    
+                case '5-9':
+                    
+                    df.loc[matching_index, '05_09_male'] = row['PopMale']
+                    df.loc[matching_index, '05_09_female'] = row['PopFemale']  
+                    
+                case '10-14':
+                    
+                    df.loc[matching_index, '10_14_male'] = row['PopMale']
+                    df.loc[matching_index, '10_14_female'] = row['PopFemale']   
+
+                case '15-19':
+                    
+                    df.loc[matching_index, '15_19_male'] = row['PopMale']
+                    df.loc[matching_index, '15_19_female'] = row['PopFemale']   
+					
+                case '20-24':
+                    
+                    df.loc[matching_index, '20_24_male'] = row['PopMale']
+                    df.loc[matching_index, '20_24_female'] = row['PopFemale']   
+					
+                case '25-29':
+                    
+                    df.loc[matching_index, '25_29_male'] = row['PopMale']
+                    df.loc[matching_index, '25_29_female'] = row['PopFemale'] 
+					
+                case '30-34':
+                    
+                    df.loc[matching_index, '30_34_male'] = row['PopMale']
+                    df.loc[matching_index, '30_34_female'] = row['PopFemale']   
+					
+                case '35-39':
+                    
+                    df.loc[matching_index, '35_39_male'] = row['PopMale']
+                    df.loc[matching_index, '35_39_female'] = row['PopFemale']   
+					
+                case '40-44':
+                    
+                    df.loc[matching_index, '40_44_male'] = row['PopMale']
+                    df.loc[matching_index, '40_44_female'] = row['PopFemale'] 
+					
+                case '45-49':
+                    
+                    df.loc[matching_index, '45_49_male'] = row['PopMale']
+                    df.loc[matching_index, '45_49_female'] = row['PopFemale']   
+					
+                case '50-54':
+                    
+                    df.loc[matching_index, '50_54_male'] = row['PopMale']
+                    df.loc[matching_index, '50_54_female'] = row['PopFemale']   
+
+                case '55-59':
+                    
+                    df.loc[matching_index, '55_59_male'] = row['PopMale']
+                    df.loc[matching_index, '55_59_female'] = row['PopFemale']  
+					
+                case '60-64':
+                    
+                    df.loc[matching_index, '60_64_male'] = row['PopMale']
+                    df.loc[matching_index, '60_64_female'] = row['PopFemale']   
+
+                case '65-69':
+                    
+                    df.loc[matching_index, '65_69_male'] = row['PopMale']
+                    df.loc[matching_index, '65_69_female'] = row['PopFemale']   
+
+                case '70-74':
+                    
+                    df.loc[matching_index, '70_74_male'] = row['PopMale']
+                    df.loc[matching_index, '70_74_female'] = row['PopFemale']   
+
+				case '75-79':
+                    
+                    df.loc[matching_index, '75_79_male'] = row['PopMale']
+                    df.loc[matching_index, '75_79_female'] = row['PopFemale']   
+					
+				case '80-84':
+                    
+                    df.loc[matching_index, '80_84_male'] = row['PopMale']
+                    df.loc[matching_index, '80_84_female'] = row['PopFemale']   					
+					
+				case '85-89':
+                    
+                    df.loc[matching_index, '85_89_male'] = row['PopMale']
+                    df.loc[matching_index, '85_89_female'] = row['PopFemale']   					
+					
+				case '90-94':
+                    
+                    df.loc[matching_index, '90_94_male'] = row['PopMale']
+                    df.loc[matching_index, '90_94_female'] = row['PopFemale']   					
+					
+				case '95_99':
+                    
+                    df.loc[matching_index, '95_99_male'] = row['PopMale']
+                    df.loc[matching_index, '95_99_female'] = row['PopFemale']   
+					
+				case '100+':
+                    
+                    df.loc[matching_index, '100_male'] = row['PopMale']
+                    df.loc[matching_index, '100_female'] = row['PopFemale']   										
+					
+					
+matching_index = df[(df['Time'] == row['Time']) & (df['LocID'] == row['LocID'])].index
+            if not matching_index.empty:					
+			
+			
+df_copy = dfAgeGroups.head(200).copy()
+
+df_copy.head()
+df.info()
+
+index = df_copy.index
+
+print( "Indexes are ", index )			

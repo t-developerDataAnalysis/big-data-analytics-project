@@ -1,0 +1,93 @@
+
+
+    Given that the dataset will be sourced from different agencies, I recommend completing the data engineering phase within one week. 
+	Afterwards, prepare an Exploratory Data Analysis (EDA) report that includes uni-variate and bi-variate analyses. 
+	The report can be in either PDF or HTML format and to be uploaded to your GitHub account. 
+	The main objective is to ensure that the working dataset is adequate to answer the proposed research questions.
+    I would also suggest linking your tentative research questions to the machine-learning techniques you plan to use. 
+	For example, by which methods do you expect to find an answer to the first question?  
+    Finally, check whether these datasets or similar ones have been used in previous research. 
+	This could help you to know more additional aspects about the topic under study and potentially improve your research. 
+	Notably, replicating past research is acceptable in this project course.
+
+
+
+
+
+
+    Given that the dataset will be sourced from different agencies, 
+	I recommend completing the data engineering phase within one week. 
+	Afterwards, prepare an Exploratory Data Analysis (EDA) report that includes uni-variate and bi-variate analyses. 
+	
+	The report can be in either PDF or HTML format and to be uploaded to your GitHub account. 
+	
+	The main objective is to ensure that the working dataset is adequate to answer the proposed research questions.
+    I would also suggest linking your tentative research questions to the machine-learning techniques you plan to use. 
+	For example, by which methods do you expect to find an answer to the first question?  
+    Finally, check whether these datasets or similar ones have been used in previous research. 
+	This could help you to know more additional aspects about the topic under study and potentially improve your research. 
+	Notably, replicating past research is acceptable in this project course.
+
+
+
+Points to revise:
+
+
+1. An adequate number of research papers have been examined.
+2. The relevance of cited articles to the project's topic has been evaluated, determining whether they addressed similar cases.
+3. Each paper has been clearly and concisely summarized to demonstrate its connection to the project's topic.
+4. The data has been cleaned, summary statistics provided, and attributes mentioned. Correlation (if relevant) between features has also been explored.
+5. The research questions are explicitly stated and appropriate for the project's objectives.
+6. Any abnormal data has been identified and documented using relevant tools, and a link to the working dataset has been added.
+7. Clear and relevant comments on the data have been provided.
+8. Past research has been employed to determine the techniques to be applied.
+9. A comprehensive methodology has been presented.
+10. The report has been structured and maintains consistency in its presentation.
+
+
+- Which factors affect the population size in predictive models
+- The question is how to set up the algorithm to work all the variables against 2 fields ( country, year )
+- Multiple linear regression
+
+For each country I have the collective information from years 1950 to 2021
+
+- Feature selector, which is the most important predictors
+
+- Filter based: multicolinearity correlations
+
+wrappers : 
+
+- embedded techniques or hibrids 
+
+- stratify clustering based on country  
+
+- fuature selection technique which factors are more important
+
+check with library 
+
+study reduction, backward elimination
+
+--------
+
+
+
+
+
+--------
+Hello Carlos,
+Please upload all the project work you like to share with me into this folder.
+That includes:
+- Abstract
+- Dataset
+- Literature Review
+- Initial Results
+- Codes and programs
+- Presentation slides
+- Any other related work
+
+Please submit these items as they become available and let me know.. I uploaded the files I received from you so far
+
+Thanks
+
+Riyad
+
