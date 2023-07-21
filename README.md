@@ -1,6 +1,6 @@
 # population_data_analytics
 
-# CIND820 - Capstone Project - Carlos Arturo Ramirez - Population Decline
+# CIND820 - Capstone Project - Results:
 
 ##File: modeling_linear_regressions.ipynb
 
