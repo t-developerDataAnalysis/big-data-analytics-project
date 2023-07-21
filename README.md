@@ -30,21 +30,17 @@ Random Forest - Train R^2: 0.9855033891660968
 Random Forest - Test R^2: 0.8378069954034717
 
 ## Gradient Boosting 
-	In both cases performing well 92% and 83%
+In both cases performing well 92% and 83%
 Train R^2: 0.9210088706064007 Gradient Boosting - 
 Test R^2: 0.8373266884850991
 
 ## Network Regression
-	In both cases not performing well 19% and 0.043%
+In both cases not performing well 19% and 0.043%
 Neural Network Regression - Train R^2: 0.19014501411429263
 Neural Network Regression - Test R^2: 0.04398702724690562
 
-
-
-
-
-Support Vector Regression
+##Support Vector Regression
 In both cases not performing well 0.37% and 0.33%
 
 Train R^2: -0.03718941052874958
-Support Vector Regression - Test R^2: -0.03320311845791735
+Test R^2: -0.03320311845791735
