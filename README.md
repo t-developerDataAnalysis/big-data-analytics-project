@@ -1,7 +1,7 @@
 # population_data_analytics
 
 
-[Project starting point ]([path/to/explainer.md](https://github.com/t-developerDataAnalysis/big-data-analytics-project/blob/main/Data_Analytics_Main_Program.ipynb)) 
+[Project starting point ](https://github.com/t-developerDataAnalysis/big-data-analytics-project/blob/main/Data_Analytics_Main_Program.ipynb) 
 
 
 # CIND820 - Capstone Project - Results:
